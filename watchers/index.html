@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <title> Vue </title>
+</head>
+
+<body>
+    <div id="app">
+        <p> nome: {{ fullName }} </p>
+        <button @click="changeName"> alterar nomes </button>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                firstName: 'Rubem',
+                lastName: 'Dias',
+                fullName: 'Rubem Dias'
+            },
+
+            watch: {
+                fullName: function () {
+                    var vm = this;
+                    setTimeout(function () {
+                        vm.fullName = 'Nome resetado';
+                    }, 3000);
+                }
+            },
+
+            methods: {
+                changeName: function () {
+                    this.fullName = 'Lucas Dias'
+                },
+            }
+        });
+    </script>
+</body>
+
+</html>

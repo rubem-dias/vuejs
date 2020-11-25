@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <title> Vue </title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Com o V-on eh diferente do vbind-->
+        <!--  Transfere os dados do template e manda para o data do vue-->
+        <button v-on:click="incrementarClick">Clique</button>
+        <p>botao clicado {{cliques}} vezes!!!</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                cliques: 0
+            },
+            methods: {
+                incrementarClick: function () {
+                    this.cliques++
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

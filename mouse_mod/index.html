@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <title> Vue </title>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click.left="onClick"> botao esquerdo (botao numero 0)</button>
+        <button v-on:click.right.prevent="onClick"> botao direito</button>
+        <!-- aqui as opcoes padroes do browser clicando com o botao direito nao aparece -->
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            methods: {
+                onClick: function () {
+                    console.log(`${event.button} was pressed`)
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <title> Vue </title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Acessando diretamente por aqui-->
+        <p>
+            {{ curso }} | {{ nomeDoAluno() }}
+        </p>
+
+        <!-- Para bindar, preciso usar o v-bind no qual pega dados da instancia do vue e transfere para o template -->
+
+        <button>
+            <a :href="docs" target="_blank"> Clique para ver a documentacao</a>
+            <!-- Posso usar :href ao inves de v-on:href ou so @ -->
+        </button>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                curso: 'vue.js',
+                aluno: 'Rubem',
+                docs: 'https://vuejs.org'
+            },
+            methods: {
+                nomeDoAluno: function () {
+                    return this.aluno;
+                    // this no view pode acessar o elemento ali em cima como o aluno, atraves do proxy que ele faz pelo documento.
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

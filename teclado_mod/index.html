@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <title> Vue </title>
+</head>
+
+<body>
+    <div id="app">
+
+        <input type="text" v-on:keyup="onKey" placeholder="Qualquer tecla">
+        <!-- Usando modificadores de tecla abaixo, quando eu quiser usar uma tecla especifica -->
+        <br>
+        <input type="text" v-on:keyup.enter="onKey" placeholder="Ativa com a tecla Enter" style="margin-top: 10px;">
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            methods: {
+                onKey: function () {
+                    console.log(`A tecla "${event.key}" foi pressionada!`)
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

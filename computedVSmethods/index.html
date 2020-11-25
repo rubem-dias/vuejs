@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <title> Vue </title>
+</head>
+
+<body>
+    <div id="app">
+        <p>Nome original: {{ curso }}</p>
+        <p>Nome Invertido (computed properties): {{ cursoInvertidoComputed }}</p>
+        <p>Nome Invertido (methods): {{ cursoInvertidoMethod }}</p>
+        <input type="text" @keyup.enter="atualizarNomeCurso">
+        <p>Autor: {{ nomeAutor ? 'Rubem' : 'Ninguem'}}</p>
+        <button @click="nomeAutor = !nomeAutor "> Alterar nome do autor </button>
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                curso: 'Computed properties',
+                nomeAutor: false
+            },
+            computed: {
+                cursoInvertidoComputed: function () {
+                    return this.curso.split('').reverse().join('');
+                }
+                //computed depende do meu dado ali no data, e tambem eh usado pra atualizar coisas
+            },
+            methods: {
+                atualizarNomeCurso: function (event) {
+                    this.curso = event.target.value;
+                },
+                cursoInvertidoMethod: function () {
+                    return this.curso.split('').reverse().join('');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

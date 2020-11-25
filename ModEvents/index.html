@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <title> Vue </title>
+</head>
+
+<body>
+    <div id="app">
+        <p v-on:click="onClick('p', $event)">
+            Curso
+            <button v-on:click.stop="onClick('button', $event)">
+                <!-- caso que eu nao queira que o evento se propague para o elemento pai somente com um click, devo usar: StoPropagation, ou usar .stop no elemento-->
+                Clique
+            </button>
+        </p>
+
+        <form action="">
+            <input type="text">
+            <button type="submit" v-on:click="onSubmit"> Enviar sem modificador </button>
+            <button type="submit" v-on:click.prevent="onSubmit"> Enviar com modificador </button>
+        </form>
+
+
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            methods: {
+                onClick: function (elementoAlvo, event) {
+                    console.log(event.type, ':', elementoAlvo)
+                },
+
+                onSubmit: function (event) {
+                    console.log('Formulario enviado')
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
