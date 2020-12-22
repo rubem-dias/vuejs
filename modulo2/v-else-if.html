@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <title> Vue </title>
+</head>
+
+<body>
+    <div id="app">
+        <p v-if="nota === 'A' "> Você passou! </p>
+        <p v-else-if="nota === 'B' "> Passou mas nem tanto</p>
+        <p v-else-if="nota === 'C' "> Banido </p>
+        <p v-else> Por enquanto desbanido </p>
+        <input v-model="nota" placeholder="Nota">
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                nota: ''
+            },
+        })
+    </script>
+</body>
+
+</html>

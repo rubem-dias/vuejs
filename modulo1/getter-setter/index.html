@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <title> Vue </title>
+</head>
+
+<body>
+    <div id="app">
+        <p> Nome: {{ nomeCompleto }}</p>
+        <input @keyup.enter="alterarNome">
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                primeiroNome: 'Rubem',
+                segundoNome: 'Dias'
+            },
+            computed: {
+                //para fazer um setter, devera ser um obj
+                nomeCompleto: {
+                    //get eh o "padrao"
+                    get: function () {
+                        return `${this.primeiroNome} ${this.segundoNome}`
+                    },
+                    set: function (novoNome) {
+                        var nomes = novoNome.split(' ');
+                        this.primeiroNome = nomes[0];
+                        this.segundoNome = nomes[nomes.length - 1]
+                    }
+                }
+            },
+            methods: {
+                alterarNome: function (e) {
+                    this.nomeCompleto = e.target.value;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
