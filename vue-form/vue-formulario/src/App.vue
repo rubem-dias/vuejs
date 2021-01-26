@@ -20,7 +20,7 @@
                 type="text"
                 class="form-control"
                 placeholder="Seu nome"
-                v-model="desenvolvedor.nome"
+                v-model.lazy.trim="desenvolvedor.nome"
               />
             </div>
 
@@ -48,12 +48,22 @@
               <p>Gênero:</p>
 
               <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" value="Masculino" />
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  value="Masculino"
+                  v-model="desenvolvedor.genero"
+                />
                 <label class="form-check-label">Masculino</label>
               </div>
 
               <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" value="Feminino" />
+                <input
+                  type="radio"
+                  class="form-check-input"
+                  value="Feminino"
+                  v-model="desenvolvedor.genero"
+                />
                 <label class="form-check-label">Feminino</label>
               </div>
             </div>
@@ -94,12 +104,17 @@
               <textarea
                 class="form-control"
                 placeholder="Conte-nos um pouco sobre você..."
+                v-model="desenvolvedor.biografia"
               ></textarea>
             </div>
 
             <div class="form-group">
               <div class="form-check form-check-inline">
-                <input type="checkbox" class="form-check-input" />
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  v-model="desenvolvedor.notificacaoes"
+                />
                 <label class="form-check-label">Receber notificações por email</label>
               </div>
             </div>
@@ -129,8 +144,16 @@
               <li class="list-group-item"><strong>Gênero:</strong></li>
               <li class="list-group-item"><strong>Ocupação:</strong></li>
               <li class="list-group-item"><strong>Tecnologias:</strong></li>
-              <li class="list-group-item"><strong>Biografia:</strong></li>
-              <li class="list-group-item"><strong>Receber notificações?</strong></li>
+              <li class="list-group-item">
+                <strong>Biografia:</strong>
+                <pre>{{ desenvolvedor.biografia }}</pre>
+              </li>
+              <li class="list-group-item">
+                <strong
+                  >Receber notificações?
+                  {{ desenvolvedor.notificacaoes ? "Sim" : "Nao" }}</strong
+                >
+              </li>
             </ul>
 
             <div class="card-header">Model</div>
@@ -153,6 +176,9 @@ export default {
         nome: "",
         email: "",
         idade: 21,
+        biografia: "Dev 2019",
+        genero: "Masculino",
+        notificacaoes: false,
       },
     };
   },
