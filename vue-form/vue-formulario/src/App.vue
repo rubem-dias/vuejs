@@ -70,8 +70,10 @@
 
             <div class="form-group">
               <label>Ocupação:</label>
-              <select class="form-control" placeholder="Seu email">
-                <option>Selecione uma opção...</option>
+              <select class="form-control" v-model="desenvolvedor.ocupacao">
+                <option v-for="(ocupacao, i) in ocupacoes" :key="i" :value="ocupacao">
+                  {{ ocupacao }}
+                </option>
               </select>
             </div>
 
@@ -79,22 +81,42 @@
               <p>Tecnologias:</p>
 
               <div class="form-check form-check-inline">
-                <input type="checkbox" class="form-check-input" value="JavaScript" />
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  value="JavaScript"
+                  v-model="desenvolvedor.tecnologias"
+                />
                 <label class="form-check-label">JavaScript</label>
               </div>
 
-              <div class="form-check form-check-inline" value="Vue JS">
-                <input type="checkbox" class="form-check-input" />
+              <div class="form-check form-check-inline">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  v-model="desenvolvedor.tecnologias"
+                  value="Vue JS"
+                />
                 <label class="form-check-label">Vue JS</label>
               </div>
 
               <div class="form-check form-check-inline">
-                <input type="checkbox" class="form-check-input" value="Vuex" />
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  value="Vuex"
+                  v-model="desenvolvedor.tecnologias"
+                />
                 <label class="form-check-label">Vuex</label>
               </div>
 
               <div class="form-check form-check-inline">
-                <input type="checkbox" class="form-check-input" value="Vue Router" />
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  value="Vue Router"
+                  v-model="desenvolvedor.tecnologias"
+                />
                 <label class="form-check-label">Vue Router</label>
               </div>
             </div>
@@ -120,7 +142,7 @@
             </div>
 
             <button class="btn btn-secondary">Resetar</button>
-            <button class="btn btn-success">Enviar</button>
+            <button class="btn btn-success" type="button" @click="enviar">Enviar</button>
           </form>
         </div>
 
@@ -143,7 +165,14 @@
               </li>
               <li class="list-group-item"><strong>Gênero:</strong></li>
               <li class="list-group-item"><strong>Ocupação:</strong></li>
-              <li class="list-group-item"><strong>Tecnologias:</strong></li>
+              <li class="list-group-item">
+                <strong>Tecnologias:</strong>
+                <ul>
+                  <li v-for="(tecnologia, i) in desenvolvedor.tecnologias" :key="i">
+                    {{ tecnologia }}
+                  </li>
+                </ul>
+              </li>
               <li class="list-group-item">
                 <strong>Biografia:</strong>
                 <pre>{{ desenvolvedor.biografia }}</pre>
@@ -179,8 +208,23 @@ export default {
         biografia: "Dev 2019",
         genero: "Masculino",
         notificacaoes: false,
+        tecnologias: [],
+        ocupacao: "Dev back mobile",
       },
+      ocupacoes: [
+        "Dev front",
+        "Dev end",
+        "Dev fullstack",
+        "Dev front mobile",
+        "Dev back mobile",
+      ],
     };
+  },
+  methods: {
+    enviar(e) {
+      const formularioEnviado = Object.assign({}, this.desenvolvedor);
+      console.log(formularioEnviado);
+    },
   },
 };
 </script>

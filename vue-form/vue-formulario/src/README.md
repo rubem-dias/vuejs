@@ -30,3 +30,19 @@ posso usar o v-model dentro do genero, usando exatamente o mesmo valor do value 
 ## checkbox
 
 geralmente o uso do checkbox redondo, eh para selecionar apenas um, ja o quadrado, podendo ser vrios.
+
+
+## armazenar valor dos checkboxs em array
+
+apenas adiciono v-model nos inputs, referenciando a instancia do array vazio que esta em desenvolvedor.tecnologias. Assim o vue sabera que quero agrupar uma lista com os checkbox.
+
+
+## Select e option
+
+intero usando v-model tambem, no campo do value, é colocado a ocupacao que está sendo interada naquele momento, é possivel usar ":selected="nome do valor"
+
+## submetendo o formulario.
+
+Dentro do metodo, exsite a funcao enviar que esta recebendo um evento dentro do parametro, pq eh um onClick.
+
+
