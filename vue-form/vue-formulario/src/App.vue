@@ -141,8 +141,10 @@
               </div>
             </div>
 
-            <button class="btn btn-secondary">Resetar</button>
-            <button class="btn btn-success" type="button" @click="enviar">Enviar</button>
+            <button class="btn btn-secondary" type="reset" @reset="resetar">
+              Resetar
+            </button>
+            <button class="btn btn-success" type="submit" @click="enviar">Enviar</button>
           </form>
         </div>
 
@@ -201,7 +203,8 @@
 export default {
   data() {
     return {
-      desenvolvedor: {
+      desenvolvedor: {},
+      valoresPadroes: {
         nome: "",
         email: "",
         idade: 21,
@@ -224,6 +227,12 @@ export default {
     enviar(e) {
       const formularioEnviado = Object.assign({}, this.desenvolvedor);
       console.log(formularioEnviado);
+    },
+    resetar() {
+      this.desenvolvedor = Object.assign({}, this.valoresPadroes);
+    },
+    created() {
+      this.resetar;
     },
   },
 };

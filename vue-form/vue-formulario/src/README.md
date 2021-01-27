@@ -45,4 +45,6 @@ intero usando v-model tambem, no campo do value, é colocado a ocupacao que est�
 
 Dentro do metodo, exsite a funcao enviar que esta recebendo um evento dentro do parametro, pq eh um onClick.
 
+## resetando o form
 
+ por padrao, o type="reset", reseta os campos, mas a alteração não é refletida para a fonte de dados.
