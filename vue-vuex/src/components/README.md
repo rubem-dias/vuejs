@@ -30,4 +30,6 @@ Usando mapState dentro da computed pra usar se caso houver muitas propriedades a
     contador: (state) => state.contador,
   })
 
+  o nome do parametro nao precisa ser igual o state dentro da store
+
 * posso criar um alias atribuindo o nome da propriedade contador dentro do nome que eu quiser.

@@ -1,7 +1,9 @@
 <template>
   <div>
     <h2 class="h2.font-weight-light">Contador: {{ contador }}</h2>
-    <h4 class="h2.font-weight-light">Contador Alias: {{ contadorAlias }}</h4>
+    <h4 class="h2.font-weight-light">
+      Contador Alias: {{ contadorAlias }} {{ nome }}
+    </h4>
     <button class="btn btn-lg btn-danger" @click="decrementar">-</button>
     <button class="btn btn-lg btn-success" @click="incrementar">+</button>
   </div>
@@ -14,7 +16,8 @@ import { mapState } from "vuex";
 export default {
   //computed: mapState(["contador"]),
   computed: mapState({
-    contador: (state) => state.contador,
+    contador: (estado) => estado.contador,
+    nome: (estado) => estado.name,
     contadorAlias: "contador",
   }),
   methods: {
