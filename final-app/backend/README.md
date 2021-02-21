@@ -18,3 +18,9 @@
  ## 3 - Modelando dados com o datamodel do prisma
 
  * Ele define o schema do banco de dados ( os tipos serao mapeados para a tabela e base para o CRUD )
+
+ * dentro do prisma.yml, esta referenciado o datamodel => datamodel: datamodel.prisma
+
+ * o type User {} pode ser entendido que o User eh uma tabela.
+
+ * no campo id, ele eh unico e obrigatorio.
