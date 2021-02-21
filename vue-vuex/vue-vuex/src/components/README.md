@@ -33,3 +33,7 @@ Usando mapState dentro da computed pra usar se caso houver muitas propriedades a
   o nome do parametro nao precisa ser igual o state dentro da store
 
 * posso criar um alias atribuindo o nome da propriedade contador dentro do nome que eu quiser.
+
+## Usar computed proprieties a mais.
+
+Para usar mais computed props sem ser o mapState, para se comunicar como por exemplo, com os dados no arquivo local, eh necessario usar o spread dentro de um objeto dentro de computed props.

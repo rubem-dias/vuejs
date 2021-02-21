@@ -15,11 +15,13 @@ import { mapState } from "vuex";
 
 export default {
   //computed: mapState(["contador"]),
-  computed: mapState({
-    contador: (estado) => estado.contador,
-    nome: (estado) => estado.name,
-    contadorAlias: "contador",
-  }),
+  computed: {
+    ...mapState({
+      contador: (estado) => estado.contador,
+      nome: (estado) => estado.name,
+      contadorAlias: "contador",
+    }),
+  },
   methods: {
     decrementar() {
       this.$store.state.contador--;
