@@ -1,10 +1,29 @@
-## 1 - Criando o prisma server.
+## 1 - Instalando o docker
+ 
+* Com o docker, posso fazer de conta que é um mini sistema operacional rodando varios containers simultaneamente para se comunicar, como por exemplo o servidor prsima com o database postgres.
 
 * Precisamos usar o docker e o docker compose, porque toda a infraestrutura do prisma eh baseado no docker.
-* é necessário criar o arquivo docker-compose para o docker entender os containers que vou querer usar.
-* rodando docker-compose up -d
 
-## 2 - Instalando o prisma CLI
+## 2 - Docker Compose
+
+  o Docker compose é responsavel por manipular todos esses containers para tabalharem juntos
+
+## 3 - Arquivo docker-compose
+
+* Criando este arquivo, defino os serviços que são os containers. Temos dois serviços: [Postgres] e [Prisma].
+
+
+[Postgres]
+
+Dentro do [Postgres] tenho as indentacoes de configuracao.
+Em [image] x que especifica a versao do "mini sistema operacional";
+[Volumes] : na minha maquina local ha um diretorio setado para o volume, que serve para armazenar alguns dados do container como o banco de dados.
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+[Prisma]
+
+Há uma key chamada ports, nesse caso seria: [HOST:CONTAINER] que significa, quando eu acessar na minha maquina a porta 4466, Eu irei acessar o container PRISMA na porta 4466
+
+## 4 - Instalando o prisma CLI
 
 * npm i -g prisma na versao @1.28.
 * iniciando com prisma init --endpoint na porta local
@@ -15,7 +34,7 @@
  
  rodando o comando prisma deploy para fazer isso e entao teremos acesso ao playground do graphql
 
- ## 3 - Modelando dados com o datamodel do prisma
+ ## 5 - Modelando dados com o datamodel do prisma
 
  * Ele define o schema do banco de dados ( os tipos serao mapeados para a tabela e base para o CRUD )
 
