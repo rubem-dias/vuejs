@@ -23,9 +23,13 @@ Em [image] x que especifica a versao do "mini sistema operacional";
 
 Há uma key chamada ports, nesse caso seria: [HOST:CONTAINER] que significa, quando eu acessar na minha maquina a porta 4466, Eu irei acessar o container PRISMA na porta 4466
 
-## 4 - Instalando o prisma CLI
+## 4 - Rodando os containers
 
-* npm i -g prisma na versao @1.28.
+* Agora docker-compose up -d para subir os containers ( -d indica que quero rodar o comando em background mode, de grosso modo, nao aparecera o log dos containers )
+
+## 5 - Instalando o prisma CLI
+
+* npm i -g prisma na versao @1.28. (npm i -g prisma@1.28)
 * iniciando com prisma init --endpoint na porta local
 * e agora ausando prisma deploy para gerar o deploy desse servico para o prisma server
 
@@ -34,7 +38,7 @@ Há uma key chamada ports, nesse caso seria: [HOST:CONTAINER] que significa, qua
  
  rodando o comando prisma deploy para fazer isso e entao teremos acesso ao playground do graphql
 
- ## 5 - Modelando dados com o datamodel do prisma
+ ## 6 - Modelando dados com o datamodel do prisma
 
  * Ele define o schema do banco de dados ( os tipos serao mapeados para a tabela e base para o CRUD )
 
