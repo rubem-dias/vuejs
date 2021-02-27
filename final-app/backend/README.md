@@ -13,15 +13,15 @@
 * Criando este arquivo, defino os serviços que são os containers. Temos dois serviços: [Postgres] e [Prisma].
 
 
-[Postgres]
+* [Postgres]
 
-Dentro do [Postgres] tenho as indentacoes de configuracao.
-Em [image] x que especifica a versao do "mini sistema operacional";
-[Volumes] : na minha maquina local ha um diretorio setado para o volume, que serve para armazenar alguns dados do container como o banco de dados.
---------------------------------------------------------------------------------------------------------------------------------------------------------
-[Prisma]
+  Dentro do [Postgres] tenho as indentacoes de configuracao.
+  Em [image] x que especifica a versao do "mini sistema operacional";
+  [Volumes] : na minha maquina local ha um diretorio setado para o volume, que serve para armazenar alguns dados do container como o banco de dados.
 
-Há uma key chamada ports, nesse caso seria: [HOST:CONTAINER] que significa, quando eu acessar na minha maquina a porta 4466, Eu irei acessar o container PRISMA na porta 4466
+* [Prisma]
+
+  Há uma key chamada ports, nesse caso seria: [HOST:CONTAINER] que significa, quando eu acessar na minha maquina a porta 4466, Eu irei acessar o container PRISMA na porta 4466
 
 ## 4 - Rodando os containers
 
