@@ -44,6 +44,16 @@
 
  * dentro do prisma.yml, esta referenciado o datamodel => datamodel: datamodel.prisma
 
+  ## 7 - User
+
  * o type User {} pode ser entendido que o User eh uma tabela.
 
  * no campo id, ele eh unico e obrigatorio.
+
+ ## 8 - Account.
+
+ * no campo user, a tabela account vai se relacionar a tabela User 
+
+ ## 9 - Enum
+
+ * o Enum nao sera mapeado para uma tabela, apenas foi feito para referenciar
